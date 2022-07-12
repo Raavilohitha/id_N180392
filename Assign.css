@@ -1,0 +1,96 @@
+
+#t{
+font-size: 30px;
+background-color: blue;
+border: 1px solid black;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-right: 40px;
+padding-left: 40px;
+margin-top: 70px;
+border-radius: 5px;
+text-decoration: underline;
+color: white;
+margin-bottom: 20px;
+}
+sub
+{
+color: red;
+
+}
+#t:hover
+{
+background-color:green;
+  color:yellow;
+}
+sub:hover
+{
+color: yellow;
+}
+#form{
+  height: 100%;
+  width: 500px;
+  padding: 20px;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  background-image:url('b1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: 5s;
+  position: absolute;
+
+  animation-name: animate ;
+  animation-direction:alternate-reverse ;
+  animation-duration:40s ;
+  animation-fill-mode:forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function:ease-out;
+}
+@keyframes animate{
+  0%{
+      background-image: url('b2.jpg');
+      background-size: 100%;
+  }
+  20%{
+      background-image: url('b3.jpg');
+      background-size: 100%;
+      background-repeat: repeat;
+  }
+  40%{
+      background-image: url('b4.jpg');
+      background-size: 100%;
+  }
+  60%{
+      background-image: url('b5.jpg');
+      background-size: 100%;
+  }
+  80%{
+      background-image: url('b6.jpg');
+      background-size: 100%;
+  }
+  100%
+  {
+      background-image: url('b1.jpg');
+      background-size: 100%;
+  }
+}
+.heading{
+  border: 0px;
+  background-color: blue;
+  height: 35px;
+  width: 100px;
+  border-radius: 10px;
+  border: 3px solid black(128, 0, 26);
+  box-shadow: 1px 3px 30px 0px black;
+  color: white;
+}
