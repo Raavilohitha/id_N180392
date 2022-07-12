@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assign_form</title>
+        <link rel="stylesheet" href="Assign.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <center>
+                <table id="t">
+                    <tr><td>F1H2O<sub><small>RGUKT</small></sub></td></tr>
+                </table>
+            </center>
+            <center>
+                <div id="form">
+                    <form action="Details.html" onsubmit="return validate()">
+                        <table>
+                            <tr>
+                                <b><lable>Username </lable></b>
+                                <input type="text" id="user"><br><br>
+                                <b><lable>Email  </lable></b>
+                                <input type="text" id="email"><br><br>
+                                <b><lable>Phone Number </lable></b>
+                                <input type="text" id="ph"><br><br>
+                                <b><label>Country </label></b>
+                                    <select id="country">
+                                        <option>India</option><br>
+                                        <option>America</option><br>
+                                        <option>England</option><br>
+                                        <option>Germany</option><br>
+                                    </select><br><br>
+                                <b><label for="">Fee-payment</label></b><br>
+                                <input type="radio" value='r1' name="r1" id="dd">DD number 
+                                <input type="radio" value='r2' name="r1" id="ac">Account number<br><br>
+                                <input type='text' id="account" placeholder="     S B I N x x x x x x"><br><br>
+                                <b><label for="">Branches</label></b><br><br>
+                                <input type="radio" name="r2" id="nuz">NUZIVD 
+                                <input type="radio" name="r2" id="ong">ONGOLE
+                                <input type="radio" name="r2" id="rkv">RK-Valley 
+                                <input type="radio" name="r2" id="sklm">SRIKAKULAM<br><br>
+                                <b><label for="">FOOD</label></b><br><br>
+                                <input type="checkbox" id="">BREAKFAST
+                                <input type="checkbox" id="">LUNCH
+                                <input type="checkbox" id="">SNACKS
+                                <input type="checkbox" id="">TEA 
+                                <input type="checkbox" id="">COFFEE
+                                <input type="checkbox" id="">EGGS<br><br>
+                                <b>No.of days to stay</b><br>
+                                <input type="text" id='days'><br><br>
+                                <input type="submit" id="submit">
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </center>
+            <script>
+                var user=document.getElementById('user');
+                var email=document.getElementById('email');
+                var ph=document.getElementById('ph');
+                var country=document.getElementById('country');
+                var dd=document.getElementById('dd');
+                var ac=document.getElementById('ac');
+                var fee=document.getElementById('account');
+                var nuz=document.getElementById('nuz');
+                var ong=document.getElementById('ong');
+                var rkv=document.getElementById('rkv');
+                var sklm=document.getElementById('skv');
+                var day=document.getElementById('days');
+                var userpattern=/^[F][a-zA-Z]+$/
+                var emailpattern=/^[a-zA-Z0-9]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z]+(\.[a-zA-Z]+)*(\.(com||in||net||edu))+$/
+                var indpattern=/^977\d{7}$/
+                var uspattern=/\d{4}-\d{4}-\d{4}/
+                var ddpattern=/^(SBIN||sbin)\d{7}$/
+                var acpattern=/\d{11}/
+                var fee=0
+                function validate(){
+                    var name=user.value.toUpperCase();
+                    if(userpattern.test(name)==false || name.length<4){
+                        
+                        console.log(nuz.checked)
+                        user.style.border='2px solid red';
+                        return false;
+                    }
+                    if(name.length>10){
+                        user.style.border='2px solid red';
+                        return false;
+                    }
+                    if(emailpattern.test(email.value)==false){
+                        email.style.border='2px solid red';
+                        return false;
+                    }
+                    else{
+                        email.style.border='2px solid black';
+                    }
+                    if(indpattern.test(ph.value)==false && uspattern.test(ph.value)==false){
+                        ph.style.border='1px solid red';
+                        return false;
+                    }
+                    if(dd.checked){
+                        if(ddpattern.test(fee.value)==false){
+                            fee.style.border='1px solid red';
+                            return false;
+                        }
+                    }
+                    if(ac.checked){
+                        if(acpattern.test(fee.value)==false){
+                            fee.style.border='1px solid red';
+                            return false;
+                        }
+                    }
+                    if(country.value!='India'){
+                        confirm('Would you like to have a beer??');
+                    }
+                    if(nuz.checked==true){
+                        fee=day.value*2000;
+                    }
+                    if(rkv.checked==true){
+                        fee=(day.value*2000);
+                    }
+                    if(ong.checked==true){
+                        fee=(day.value*3000);
+                    }
+                    if(sklm.checked==true){
+                        fee=(day.value*3000);
+                    }
+                    alert('Total amount:'+fee);
+                    return true;
+                    
+                }
+            </script>
+        </div>
+    </body>
+</html>
